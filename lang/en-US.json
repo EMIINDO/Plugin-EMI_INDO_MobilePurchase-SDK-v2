@@ -1,0 +1,384 @@
+{
+  "languageTag": "en-US",
+  "fileDescription": "Strings for Mobile Purchase Plugin",
+  "text": {
+    "plugins": {
+      "emi_indo_mobilepurchase": {
+        "name": "Mobile Purchase",
+        "description": "Google Play Billing Library into your app ( Support: Consumable | Non-consumable | Subscriptions )",
+        "help-url": "https://www.construct.net/en/make-games/addons/1052/mobile-purchase/documentation",
+        "properties": {},
+        "aceCategories": {
+          "initialize": "0 initialize",
+          "show products available": "1 show products available",
+          "purchase": "2 purchase",
+          "fetching purchase history": "3 fetching purchase history",
+          "fetching purchases": "4 fetching purchases",
+          "processing purchases": "2 processing purchases",
+          "debug": "debug",
+          "error": "error",
+          "global": "global",
+          "response-position": "response position",
+          "get a transaction": "get a transaction"
+        },
+        "conditions": {
+          "on-initialize": {
+            "list-name": "On Initialize",
+            "display-text": "On Initialize",
+            "description": "this is the description"
+          },
+          "on-initialize-error": {
+            "list-name": "On Initialize Error",
+            "display-text": "On Initialize Error",
+            "description": "On Initialize Error"
+          },
+          "on-purchase-completed": {
+            "list-name": "On Purchase Completed",
+            "display-text": "On purchase [b]{0}[/b] Completed",
+            "description": "Trigger fires when a product is successfully purchased or subscribed.",
+            "params": {
+              "productId": {
+                "name": "Product ID",
+                "desc": "The identifier of the product on the store."
+              }
+            }
+          },
+          "on-user-canceled": {
+            "list-name": "On User Canceled",
+            "display-text": "On User Canceled",
+            "description": "On User Canceled"
+          },
+          "on-service-unavailable": {
+            "list-name": "On Service Unavailable",
+            "display-text": "On Service Unavailable",
+            "description": "On Service Unavailable"
+          },
+          "on-billing-unavailable": {
+            "list-name": "On Billing Unavailable",
+            "display-text": "On Billing Unavailable",
+            "description": "On Billing Unavailable"
+          },
+          "on-item-unavailable": {
+            "list-name": "On Item Unavailable",
+            "display-text": "On Item Unavailable",
+            "description": "On Item Unavailable"
+          },
+          "on-developer-error": {
+            "list-name": "On Developer Error",
+            "display-text": "On Developer Error",
+            "description": "On Developer Error"
+          },
+          "on-error": {
+            "list-name": "On Error",
+            "display-text": "On Error",
+            "description": "On Error"
+          },
+          "on-item-already-owned": {
+            "list-name": "On Item Already Owned",
+            "display-text": "On Item Already Owned, Type: [b]{0}[/b]",
+            "description": "On Item Already Owned",
+            "params": {
+              "productType": {
+                "name": "Product Type :",
+                "desc": "Non-consumable | Subscriptions",
+                "items": {
+                  "Non-consumable": "Non-consumable :",
+                  "Subscriptions": "Subscriptions :"
+                }
+              }
+            }
+          },
+          "on-item-not-owned": {
+            "list-name": "On Item Not Owned",
+            "display-text": "On Item Not Owned",
+            "description": "On Item Not Owned"
+          },
+          "on-service-disconnected": {
+            "list-name": "On Service Disconnected",
+            "display-text": "On Service Disconnected",
+            "description": "On Service Disconnected"
+          },
+          "on-feature-not-supported": {
+            "list-name": "On Feature Not Supported",
+            "display-text": "On Feature Not Supported",
+            "description": "On Feature Not Supported"
+          },
+          "on-network-error": {
+            "list-name": "On Network Error",
+            "display-text": "On Network Error",
+            "description": "On Network Error"
+          },
+          "on-get-product-detail": {
+            "list-name": "On Get Product Detail",
+            "display-text": "On Get Product Detail, Type: [b]{0}[/b], productId: [b]{1}[/b]",
+            "description": "On Get Product Detail",
+            "params": {
+              "productType": {
+                "name": "Product Type :",
+                "desc": "Non-consumable | Subscriptions",
+                "items": {
+                  "Non-consumable": "Non-consumable :",
+                  "Subscriptions": "Subscriptions :"
+                }
+              },
+              "productId": {
+                "name": "Product ID",
+                "desc": "The identifier of the product on the store."
+              }
+            }
+          },
+          "on-get-product-detail-error": {
+            "list-name": "On Get Product Detail Error",
+            "display-text": "On Get Product Detail Error",
+            "description": "On Get Product Detail Error"
+          },
+          "on-get-purchase-history": {
+            "list-name": "On Get Purchase History",
+            "display-text": "On Get Purchase History, Type: [b]{0}[/b]",
+            "description": "On Get Purchase History",
+            "params": {
+              "productType": {
+                "name": "Product Type :",
+                "desc": "Non-consumable | Subscriptions",
+                "items": {
+                  "Non-consumable": "Non-consumable :",
+                  "Subscriptions": "Subscriptions :"
+                }
+              }
+            }
+          },
+          "on-get-purchase-history-error": {
+            "list-name": "On Get Purchase History Error",
+            "display-text": "On Get Purchase History Error",
+            "description": "On Get Purchase History Error"
+          },
+          "on-restore": {
+            "list-name": "On Restore",
+            "display-text": "On Restore, Type: [b]{0}[/b]",
+            "description": "On Restore",
+            "params": {
+              "productType": {
+                "name": "Product Type :",
+                "desc": "Non-consumable | Subscriptions",
+                "items": {
+                  "Non-consumable": "Non-consumable :",
+                  "Subscriptions": "Subscriptions :"
+                }
+              }
+            }
+          },
+          "on-restore-error": {
+            "list-name": "On Restore Error",
+            "display-text": "On Restore Error",
+            "description": "On Restore Error"
+          }
+        },
+        "actions": {
+          "initialize": {
+            "list-name": "Initialize",
+            "display-text": "initialize",
+            "description": "SDK Initialize a BillingClient"
+          },
+          "get-product-details": {
+            "list-name": "Get Product Details",
+            "display-text": "Check Product Details, (Type: [b]{0}[/b], productId: [b]{1}[/b], Position: [b]{2}[/b]).",
+            "description": "After you have established a connection to Google Play, you are ready to query for your available products and display them to your users.",
+            "params": {
+              "productType": {
+                "name": "Product Type :",
+                "desc": "Non-consumable | Subscriptions | Consumable: boolean",
+                "items": {
+                  "Non-consumable": "Non-consumable :",
+                  "Subscriptions": "Subscriptions :"
+                }
+              },
+              "productId": {
+                "name": "Product ID :",
+                "desc": "Must start with a number or lowercase letter, and can contain numbers (0-9), lowercase letters (a-z), underscores (_) and full stops (.)."
+              },
+              "position": {
+                "name": "Get Position :",
+                "desc": "Set Position: ProductId | Title | Description | Item Price | All",
+                "items": {
+                  "ProductId": "Product ID",
+                  "Title": "Name",
+                  "Description": "Description",
+                  "Item_Price": "Item Price",
+                  "Any": "All"
+                }
+              }
+            }
+          },
+          "purchase-products": {
+            "list-name": "Purchase Products",
+            "display-text": "Purchase Products, (Type: [b]{0}[/b], productId: [b]{1}[/b], isConsumable: [b]{2}[/b], Name: [b]{3}[/b], Description: [b]{4}[/b]).",
+            "description": "Launch the purchase flow (Non-consumable | Subscriptions | Consumable: boolean)",
+            "params": {
+              "productType": {
+                "name": "Product Type :",
+                "desc": "Non-consumable | Subscriptions | Consumable: boolean",
+                "items": {
+                  "Non-consumable": "Non-consumable :",
+                  "Subscriptions": "Subscriptions :"
+                }
+              },
+              "productId": {
+                "name": "Product ID :",
+                "desc": "Must start with a number or lowercase letter, and can contain numbers (0-9), lowercase letters (a-z), underscores (_) and full stops (.)."
+              },
+              "isConsumable": {
+                "name": "Is Consumable :",
+                "desc": "(if Enabled = (consumable), Products can be bought back, productType must be Non-consumable), (if Disabled = (Non-consumable) Product cannot be repurchased, productType: Non-consumable | Subscriptions)",
+                "items": {
+                  "enabled": "Enabled",
+                  "disabled": "Disabled"
+                }
+              },
+              "title": {
+                "name": "Name :",
+                "desc": "Product details"
+              },
+              "description": {
+                "name": "Description :",
+                "desc": "Product details"
+              }
+            }
+          },
+          "get-purchase-history": {
+            "list-name": "Get Purchase History",
+            "display-text": "Show Purchase History, (Type: [b]{0}[/b], Get Position: [b]{1}[/b]).",
+            "description": "returns the most recent purchase made by the user for each product, even if that purchase is expired, canceled, or consumed.",
+            "params": {
+              "productType": {
+                "name": "Product Type :",
+                "desc": "Non-consumable | Subscriptions | Consumable: boolean",
+                "items": {
+                  "Non-consumable": "Non-consumable :",
+                  "Subscriptions": "Subscriptions :"
+                }
+              },
+              "position": {
+                "name": "Get Position :",
+                "desc": "Set Position: Purchase Token | Original Json | Quantity | Signature | Developer Payload | Purchase Time | Products Id | All",
+                "items": {
+                  "Purchase_Token": "Purchase Token",
+                  "Original_Json": "Original Json",
+                  "Quantity": "Quantity",
+                  "Signature": "Signature",
+                  "Developer_Payload": "Developer Payload",
+                  "Products": "Products ID",
+                  "Purchase_Time": "Purchase Time",
+                  "Any": "All"
+                }
+              }
+            }
+          },
+          "restore-purchases": {
+            "list-name": "Restore Purchases",
+            "display-text": "Restore Purchases, (Type: [b]{0}[/b], Get Position: [b]{1}[/b]).",
+            "description": "It's possible that your app might not be aware of all the purchases a user has made.",
+            "params": {
+              "productType": {
+                "name": "Product Type :",
+                "desc": "Non-consumable | Subscriptions | Consumable: boolean",
+                "items": {
+                  "Non-consumable": "Non-consumable :",
+                  "Subscriptions": "Subscriptions :"
+                }
+              },
+              "position": {
+                "name": "Get Position :",
+                "desc": "Set Position: Order ID | Purchase Token | Package Name | Purchase Time | Purchase State | Quantity | Signature | Original Json | ProductId | All",
+                "items": {
+                  "OrderId": "Order ID",
+                  "Purchase_Token": "Purchase Token",
+                  "Package_Name": "Package Name",
+                  "Purchase_Time": "Purchase Time",
+                  "Purchase_State": "Purchase State",
+                  "Quantity": "Quantity",
+                  "Signature": "Signature",
+                  "ProductId": "ProductId",
+                  "Any": "All"
+                }
+              }
+            }
+          }
+        },
+        "expressions": {
+          "success-response": {
+            "translated-name": "Success Response",
+            "description": "All Action categories"
+          },
+          "error-response": {
+            "translated-name": "Error Response",
+            "description": "All Action categories"
+          },
+          "response-code": {
+            "translated-name": "Response Code",
+            "description": "Handle Purchase Billing Result response codes, (Including: consumable | Non-consumable | Subscriptions)"
+          },
+          "product-detail": {
+            "translated-name": "Product Detail",
+            "description": "if get response position success"
+          },
+          "purchase-history": {
+            "translated-name": "Purchase History",
+            "description": "if get response position success"
+          },
+          "restore-purchase": {
+            "translated-name": "Restore Purchase",
+            "description": "if get response position success"
+          },
+          "package-name": {
+            "translated-name": "Package Name",
+            "description": "Get Package Name value when the purchase is successful"
+          },
+          "products-id": {
+            "translated-name": "Products Id",
+            "description": "Get Products Id value when the purchase is successful"
+          },
+          "purchase-time": {
+            "translated-name": "Purchase Time",
+            "description": "Get Purchase Time value when the purchase is successful"
+          },
+          "order-id": {
+            "translated-name": "Order Id",
+            "description": "Get OrderId/GPA value when the purchase is successful"
+          },
+          "purchase-token": {
+            "translated-name": "Purchase Token",
+            "description": "Get PurchaseToken value when the purchase is successful"
+          },
+          "signature": {
+            "translated-name": "Signature",
+            "description": "Get Signature value when the purchase is successful"
+          },
+          "purchase-state": {
+            "translated-name": "Purchase State",
+            "description": "Get PurchaseState value when the purchase is successful"
+          },
+          "original-json": {
+            "translated-name": "Original Json",
+            "description": "Get Original Json value when the purchase is successful"
+          },
+          "quantity": {
+            "translated-name": "Quantity",
+            "description": "Get Quantity value when the purchase is successful"
+          },
+          "is-acknowledged": {
+            "translated-name": "Is Acknowledged",
+            "description": "Get IsAcknowledged value when the purchase is successful"
+          },
+          "accountidentifiers": {
+            "translated-name": "Account identifiers",
+            "description": "Get Accountidentifiers value when the purchase is successful"
+          },
+          "developer-payload": {
+            "translated-name": "Developer Payload",
+            "description": "Get DeveloperPayload value when the purchase is successful"
+          }
+        }
+      }
+    }
+  }
+}

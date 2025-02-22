@@ -1,0 +1,478 @@
+{
+  "initialize": {
+    "conditions": [
+      {
+        "id": "on-initialize",
+        "scriptName": "OnInitialize",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "on-initialize-error",
+        "scriptName": "OnInitializeError",
+        "highlight": false,
+        "isTrigger": true
+      }
+    ],
+    "actions": [
+      {
+        "id": "initialize",
+        "scriptName": "Initialize",
+        "highlight": true,
+        "isAsync": true
+      }
+    ],
+    "expressions": []
+  },
+  "show products available": {
+    "conditions": [
+      {
+        "id": "on-get-product-detail",
+        "scriptName": "OnGetProductDetail",
+        "highlight": false,
+        "isTrigger": true,
+        "params": [
+          {
+            "id": "productType",
+            "type": "combo",
+            "items": [
+              "Non-consumable",
+              "Subscriptions"
+            ],
+            "initialValue": "Non-consumable"
+          },
+          {
+            "id": "productId",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "id": "on-get-product-detail-error",
+        "scriptName": "OnGetProductDetailError",
+        "highlight": false,
+        "isTrigger": true
+      }
+    ],
+    "actions": [
+      {
+        "id": "get-product-details",
+        "scriptName": "GetProductDetails",
+        "highlight": false,
+        "isAsync": true,
+        "params": [
+          {
+            "id": "productType",
+            "type": "combo",
+            "items": [
+              "Non-consumable",
+              "Subscriptions"
+            ],
+            "initialValue": "Non-consumable"
+          },
+          {
+            "id": "productId",
+            "type": "string"
+          },
+          {
+            "id": "position",
+            "type": "combo",
+            "items": [
+              "ProductId",
+              "Title",
+              "Description",
+              "Item_Price",
+              "Any"
+            ],
+            "initialValue": "ProductId"
+          }
+        ]
+      }
+    ],
+    "expressions": []
+  },
+  "purchase": {
+    "conditions": [],
+    "actions": [
+      {
+        "id": "purchase-products",
+        "scriptName": "PurchaseProducts",
+        "highlight": true,
+        "isAsync": true,
+        "params": [
+          {
+            "id": "productType",
+            "type": "combo",
+            "items": [
+              "Non-consumable",
+              "Subscriptions"
+            ],
+            "initialValue": "Non-consumable"
+          },
+          {
+            "id": "productId",
+            "type": "string"
+          },
+          {
+            "id": "isConsumable",
+            "type": "combo",
+            "items": [
+              "enabled",
+              "disabled"
+            ],
+            "initialValue": "enabled"
+          },
+          {
+            "id": "title",
+            "type": "string"
+          },
+          {
+            "id": "description",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "expressions": []
+  },
+  "fetching purchase history": {
+    "conditions": [
+      {
+        "id": "on-get-purchase-history",
+        "scriptName": "OnGetPurchaseHistory",
+        "highlight": false,
+        "isTrigger": true,
+        "params": [
+          {
+            "id": "productType",
+            "type": "combo",
+            "items": [
+              "Non-consumable",
+              "Subscriptions"
+            ],
+            "initialValue": "Non-consumable"
+          }
+        ]
+      },
+      {
+        "id": "on-get-purchase-history-error",
+        "scriptName": "OnGetPurchaseHistoryError",
+        "highlight": false,
+        "isTrigger": true
+      }
+    ],
+    "actions": [
+      {
+        "id": "get-purchase-history",
+        "scriptName": "GetPurchaseHistory",
+        "highlight": false,
+        "isAsync": true,
+        "params": [
+          {
+            "id": "productType",
+            "type": "combo",
+            "items": [
+              "Non-consumable",
+              "Subscriptions"
+            ],
+            "initialValue": "Non-consumable"
+          },
+          {
+            "id": "position",
+            "type": "combo",
+            "items": [
+              "Purchase_Token",
+              "Original_Json",
+              "Quantity",
+              "Signature",
+              "Developer_Payload",
+              "Products",
+              "Purchase_Time",
+              "Any"
+            ],
+            "initialValue": "Purchase_Token"
+          }
+        ]
+      }
+    ],
+    "expressions": []
+  },
+  "fetching purchases": {
+    "conditions": [
+      {
+        "id": "on-restore",
+        "scriptName": "OnRestore",
+        "highlight": false,
+        "isTrigger": true,
+        "params": [
+          {
+            "id": "productType",
+            "type": "combo",
+            "items": [
+              "Non-consumable",
+              "Subscriptions"
+            ],
+            "initialValue": "Non-consumable"
+          }
+        ]
+      },
+      {
+        "id": "on-restore-error",
+        "scriptName": "OnRestoreError",
+        "highlight": false,
+        "isTrigger": true
+      }
+    ],
+    "actions": [
+      {
+        "id": "restore-purchases",
+        "scriptName": "RestorePurchases",
+        "highlight": false,
+        "isAsync": true,
+        "params": [
+          {
+            "id": "productType",
+            "type": "combo",
+            "items": [
+              "Non-consumable",
+              "Subscriptions"
+            ],
+            "initialValue": "Non-consumable"
+          },
+          {
+            "id": "position",
+            "type": "combo",
+            "items": [
+              "OrderId",
+              "Purchase_Token",
+              "Package_Name",
+              "Purchase_Time",
+              "Purchase_State",
+              "Quantity",
+              "Signature",
+              "ProductId",
+              "Any"
+            ],
+            "initialValue": "Purchase_Token"
+          }
+        ]
+      }
+    ],
+    "expressions": []
+  },
+  "processing purchases": {
+    "conditions": [
+      {
+        "id": "on-purchase-completed",
+        "scriptName": "OnPurchaseCompleted",
+        "highlight": true,
+        "isTrigger": true,
+        "params": [
+          {
+            "id": "productId",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "id": "on-user-canceled",
+        "scriptName": "OnUserCanceled",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "on-service-unavailable",
+        "scriptName": "OnServiceUnavailable",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "on-billing-unavailable",
+        "scriptName": "OnBillingUnavailable",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "on-item-unavailable",
+        "scriptName": "OnItemUnavailable",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "on-developer-error",
+        "scriptName": "OnDeveloperError",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "on-error",
+        "scriptName": "OnError",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "on-item-already-owned",
+        "scriptName": "OnItemAlreadyOwned",
+        "highlight": false,
+        "isTrigger": true,
+        "params": [
+          {
+            "id": "productType",
+            "type": "combo",
+            "items": [
+              "Non-consumable",
+              "Subscriptions"
+            ],
+            "initialValue": "Non-consumable"
+          }
+        ]
+      },
+      {
+        "id": "on-item-not-owned",
+        "scriptName": "OnItemNotOwned",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "on-service-disconnected",
+        "scriptName": "OnServiceDisconnected",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "on-feature-not-supported",
+        "scriptName": "OnFeatureNotSupported",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "on-network-error",
+        "scriptName": "OnNetworkError",
+        "highlight": false,
+        "isTrigger": true
+      }
+    ],
+    "actions": [],
+    "expressions": []
+  },
+  "debug": {
+    "conditions": [],
+    "actions": [],
+    "expressions": [
+      {
+        "id": "success-response",
+        "expressionName": "SuccessResponse",
+        "returnType": "any"
+      }
+    ]
+  },
+  "error": {
+    "conditions": [],
+    "actions": [],
+    "expressions": [
+      {
+        "id": "error-response",
+        "expressionName": "ErrorResponse",
+        "returnType": "any"
+      }
+    ]
+  },
+  "global": {
+    "conditions": [],
+    "actions": [],
+    "expressions": [
+      {
+        "id": "response-code",
+        "expressionName": "ResponseCode",
+        "returnType": "any"
+      }
+    ]
+  },
+  "response-position": {
+    "conditions": [],
+    "actions": [],
+    "expressions": [
+      {
+        "id": "product-detail",
+        "expressionName": "ProductDetail",
+        "returnType": "any"
+      },
+      {
+        "id": "purchase-history",
+        "expressionName": "PurchaseHistory",
+        "returnType": "any"
+      },
+      {
+        "id": "restore-purchase",
+        "expressionName": "RestorePurchase",
+        "returnType": "any"
+      }
+    ]
+  },
+  "get a transaction": {
+    "conditions": [],
+    "actions": [],
+    "expressions": [
+      {
+        "id": "package-name",
+        "expressionName": "PackageName",
+        "returnType": "any"
+      },
+      {
+        "id": "products-id",
+        "expressionName": "ProductsId",
+        "returnType": "any"
+      },
+      {
+        "id": "purchase-time",
+        "expressionName": "PurchaseTime",
+        "returnType": "any"
+      },
+      {
+        "id": "order-id",
+        "expressionName": "OrderId",
+        "returnType": "any"
+      },
+      {
+        "id": "purchase-token",
+        "expressionName": "PurchaseToken",
+        "returnType": "any"
+      },
+      {
+        "id": "signature",
+        "expressionName": "Signature",
+        "returnType": "any"
+      },
+      {
+        "id": "purchase-state",
+        "expressionName": "PurchaseState",
+        "returnType": "any"
+      },
+      {
+        "id": "original-json",
+        "expressionName": "OriginalJson",
+        "returnType": "any"
+      },
+      {
+        "id": "quantity",
+        "expressionName": "Quantity",
+        "returnType": "any"
+      },
+      {
+        "id": "is-acknowledged",
+        "expressionName": "IsAcknowledged",
+        "returnType": "any"
+      },
+      {
+        "id": "accountidentifiers",
+        "expressionName": "Accountidentifiers",
+        "returnType": "any"
+      },
+      {
+        "id": "developer-payload",
+        "expressionName": "DeveloperPayload",
+        "returnType": "any"
+      }
+    ]
+  }
+}
